@@ -1,0 +1,405 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --ink: #17211d;
+  --muted: #65736d;
+  --line: #dbe2dd;
+  --surface: #ffffff;
+  --soft: #f3f6f2;
+  --accent: #176b52;
+  --accent-strong: #0f4d3d;
+  --gold: #c8811a;
+  --shadow: 0 18px 45px rgba(23, 33, 29, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--soft);
+  color: var(--ink);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(90deg, rgba(13, 23, 20, 0.84), rgba(13, 23, 20, 0.28)),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1800")
+      center/cover;
+  color: #ffffff;
+}
+
+.topbar {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.pill {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(8px);
+}
+
+.heroContent {
+  width: min(1180px, calc(100% - 32px));
+  margin: auto auto 72px;
+}
+
+.eyebrow,
+.sectionLabel {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 5.7rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.heroText {
+  max-width: 620px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+main {
+  width: min(1180px, calc(100% - 32px));
+  margin: -48px auto 64px;
+}
+
+.controls {
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.searchField label,
+.control span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.83rem;
+  font-weight: 800;
+}
+
+.control {
+  min-width: 0;
+}
+
+.searchField input,
+.control select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 14px;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.rangeControl input {
+  display: block;
+  width: calc(100% - 4px);
+  max-width: 100%;
+  accent-color: var(--accent);
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin: 34px 0 18px;
+}
+
+.resultsHeader h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.ghostButton,
+.primaryButton {
+  min-height: 42px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-weight: 800;
+}
+
+.ghostButton {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.primaryButton {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.primaryButton:hover {
+  background: var(--accent-strong);
+}
+
+.hotelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.hotelCard,
+.emptyState {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hotelCard img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.hotelBody {
+  padding: 16px;
+}
+
+.hotelMeta,
+.cardFooter,
+.detailStats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hotelMeta {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.hotelCard h3 {
+  min-height: 58px;
+  margin: 12px 0 8px;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.hotelCard p {
+  min-height: 86px;
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.55;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.price {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.night {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  padding: 36px;
+  text-align: center;
+}
+
+.emptyState p {
+  color: var(--muted);
+}
+
+.modalRoot:empty {
+  display: none;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 17, 15, 0.58);
+  z-index: 10;
+}
+
+.modal {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  width: min(860px, calc(100% - 28px));
+  max-height: calc(100vh - 28px);
+  overflow: auto;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 8px;
+  z-index: 11;
+  box-shadow: var(--shadow);
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-weight: 900;
+  z-index: 2;
+}
+
+.photoStrip {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 6px;
+  height: 310px;
+  background: var(--line);
+}
+
+.photoStrip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoStrip img:first-child {
+  grid-row: span 2;
+}
+
+.modalBody {
+  padding: 24px;
+}
+
+.modalBody h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+}
+
+.modalBody p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.detailStats {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.detailStats span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 800;
+}
+
+.wideButton {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .filterGrid,
+  .hotelGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar,
+  .heroContent,
+  main {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .filterGrid,
+  .hotelGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .resultsHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cardFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .photoStrip {
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .photoStrip img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .photoStrip img:first-child {
+    grid-column: span 2;
+  }
+}
