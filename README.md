@@ -1,6 +1,6 @@
 # StayFinder
 
-A responsive hotel discovery app for the Vibe2Ship hackathon project. It consumes the provided hotel API response shape:
+A responsive hotel discovery app. It consumes the provided hotel API response shape:
 
 ```json
 {
